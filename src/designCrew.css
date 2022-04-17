@@ -1,0 +1,138 @@
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 98%);
+  z-index: 1000;
+  margin: 0;
+}
+.spiner {
+  width: 6rem;
+  height: 6rem;
+  background: none;
+  border: 6px solid rebeccapurple;
+  border-color: transparent rebeccapurple rebeccapurple rebeccapurple;
+  border-radius: 50%;
+  position: relative;
+  animation: spiner 1s infinite linear;
+}
+.spiner::before {
+  content: "";
+  width: 6rem;
+  height: 6rem;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: -47px;
+  top: 50px;
+  animation: spiner 0.3s infinite linear;
+}
+.spiner::after {
+  content: "";
+  width: 6rem;
+  height: 6rem;
+  border: 6px solid rgb(228, 240, 8);
+  border-color: rgb(228, 240, 8) transparent rgb(228, 240, 8) rgb(228, 240, 8);
+  border-radius: 50%;
+  position: absolute;
+  left: 47px;
+  top: 50px;
+  animation: spiner 3s infinite linear;
+}
+
+@keyframes spiner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.crew {
+  height: calc(100vh - 132px);
+}
+.crew .container {
+  height: 100%;
+}
+.crew .title {
+  font-size: 2rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.5rem;
+}
+.crew .title span {
+  color: #383b4b;
+  margin-right: 0.5rem;
+}
+.crew-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+.crew-info {
+  font-family: "Barlow Condensed", sans-serif;
+}
+.crew-info h4 {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4rem;
+}
+.crew-info span {
+  font-size: 1.5rem;
+  display: block;
+}
+.crew-img {
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.crew-img img {
+  width: 27rem;
+}
+.penirations {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.penirations span {
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: rgb(121, 121, 121);
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+}
+.penirations span.active {
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .crew {
+    height: auto;
+  }
+  .crew .title {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .crew-content {
+    flex-direction: column;
+    padding-top: 3rem;
+  }
+  .crew-info {
+    text-align: center;
+  }
+  .crew-info .para {
+    margin: 0 auto;
+  }
+  .penirations {
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
