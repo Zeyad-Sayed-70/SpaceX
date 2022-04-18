@@ -54,6 +54,7 @@
 
 .crew {
   height: calc(100vh - 132px);
+  overflow: hidden;
 }
 .crew .container {
   height: 100%;
@@ -92,7 +93,7 @@
   flex-direction: column-reverse;
 }
 .crew-img img {
-  width: 27rem;
+  width: 24rem;
 }
 .penirations {
   display: flex;
